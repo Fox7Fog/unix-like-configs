@@ -1,0 +1,137 @@
+# Alacritty Configuration File
+
+# Import additional configuration files
+# import = [
+#   "~/.config/alacritty/base16-dark.toml",
+#   "~/.config/alacritty/keybindings.toml",
+# ]
+
+# Any items in the `env` entry below will be added as
+# environment variables. Some entries may override variables
+# set by alacritty itself.
+[env]
+# TERM = "alacritty"
+
+# Window configuration
+[window]
+# dimensions = { columns = 0, lines = 0 }
+# position = "None"
+# padding = { x = 0, y = 0 }
+# dynamic_padding = false
+# decorations = "Full"
+# opacity = 1.0
+# startup_mode = "Windowed"
+# title = "Alacritty"
+# dynamic_title = true
+# class = { instance = "Alacritty", general = "Alacritty" }
+
+# Scrolling configuration
+[scrolling]
+# history = 10000
+# multiplier = 3
+
+# Font configuration
+[font]
+# normal = { family = "monospace", style = "Regular" }
+# bold = { style = "Bold" }
+# italic = { style = "Italic" }
+# bold_italic = { style = "Bold Italic" }
+# size = 11.25
+# offset = { x = 0, y = 0 }
+# glyph_offset = { x = 0, y = 0 }
+
+# Color configuration (Gruvbox Dark)
+[colors.primary]
+background = "#282828"
+foreground = "#ebdbb2"
+
+[colors.normal]
+black = "#282828"
+red = "#cc241d"
+green = "#98971a"
+yellow = "#d79921"
+blue = "#458588"
+magenta = "#b16286"
+cyan = "#689d6a"
+white = "#a89984"
+
+[colors.bright]
+black = "#928374"
+red = "#fb4934"
+green = "#b8bb26"
+yellow = "#fabd2f"
+blue = "#83a598"
+magenta = "#d3869b"
+cyan = "#8ec07c"
+white = "#ebdbb2"
+
+# Bell configuration
+[bell]
+# animation = "Linear"
+# duration = 0
+# color = "#ffffff"
+
+# Selection configuration
+[selection]
+# semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+# save_to_clipboard = false
+
+# Cursor configuration
+[cursor]
+# style = { shape = "Block", blinking = "Off" }
+# vi_mode_style = "None"
+# blink_interval = 750
+# unfocused_hollow = true
+# thickness = 0.15
+
+# Live config reload
+# live_config_reload = true
+
+# Shell configuration
+# shell = { program = "/bin/bash", args = ["-l"] }
+
+# Working directory
+# working_directory = "None"
+
+# Mouse configuration
+[mouse]
+# hide_when_typing = false
+
+# Hints configuration
+[hints]
+# alphabet = "jfkdls;ahgurieowpq"
+# [[hints.enabled]]
+# regex = "(ipfs:|ipns:|magnet:|mailto:|gemini://|gopher://|https://|http://|news:|file:|git://|ssh:|ftp://)\
+# [^\u0000-\u001F\u007F-\u009F<>\"\\s{-}\\^⟨⟩`]+"
+# hyperlinks = true
+# command = "xdg-open"
+# post_processing = true
+# mouse.enabled = true
+# binding = { key = "U", mods = "Control|Shift" }
+
+# Key bindings
+[keyboard]
+# bindings = [
+#   { key = "V", mods = "Control|Shift", action = "Paste" },
+#   { key = "C", mods = "Control|Shift", action = "Copy" },
+#   { key = "Insert", mods = "Shift", action = "PasteSelection" },
+#   { key = "Key0", mods = "Control", action = "ResetFontSize" },
+#   { key = "Equals", mods = "Control", action = "IncreaseFontSize" },
+#   { key = "Minus", mods = "Control", action = "DecreaseFontSize" },
+#   { key = "F11", action = "ToggleFullscreen" },
+#   { key = "Paste", action = "Paste" },
+#   { key = "Copy", action = "Copy" },
+#   { key = "L", mods = "Control", action = "ClearLogNotice" },
+#   { key = "L", mods = "Control", chars = "\x0c" },
+#   { key = "PageUp", mods = "Shift", action = "ScrollPageUp", mode = "~Alt" },
+#   { key = "PageDown", mods = "Shift", action = "ScrollPageDown", mode = "~Alt" },
+#   { key = "Home", mods = "Shift", action = "ScrollToTop", mode = "~Alt" },
+#   { key = "End", mods = "Shift", action = "ScrollToBottom", mode = "~Alt" }
+# ]
+
+# Debug options
+[debug]
+# render_timer = false
+# persistent_logging = false
+# log_level = "Warn"
+# print_events = false

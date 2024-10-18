@@ -10,40 +10,40 @@
 # environment variables. Some entries may override variables
 # set by alacritty itself.
 [env]
-# TERM = "alacritty"
+TERM = "alacritty"
 
 # Window configuration
 [window]
 # dimensions = { columns = 0, lines = 0 }
-# position = "None"
+position = "None"
 # padding = { x = 0, y = 0 }
-# dynamic_padding = false
-# decorations = "Full"
-# opacity = 1.0
+dynamic_padding = false
+decorations = "Full"
+opacity = 1.0
 # startup_mode = "Windowed"
-# title = "Alacritty"
-# dynamic_title = true
-# class = { instance = "Alacritty", general = "Alacritty" }
+title = "Alacritty"
+dynamic_title = true
+class = { instance = "Alacritty", general = "Alacritty" }
 
 # Scrolling configuration
 [scrolling]
-# history = 10000
-# multiplier = 3
+history = 50000
+multiplier = 3
 
 # Font configuration
 [font]
-# normal = { family = "monospace", style = "Regular" }
-# bold = { style = "Bold" }
-# italic = { style = "Italic" }
-# bold_italic = { style = "Bold Italic" }
-# size = 11.25
-# offset = { x = 0, y = 0 }
-# glyph_offset = { x = 0, y = 0 }
+normal = { family = "JetBrainsMono", style = "Regular" }
+bold = { style = "Bold" }
+italic = { style = "Italic" }
+bold_italic = { style = "Bold Italic" }
+size = 14
+offset = { x = 0, y = 0 }
+glyph_offset = { x = 0, y = 0 }
 
 # Color configuration (Gruvbox Dark)
 [colors.primary]
-background = "#282828"
-foreground = "#ebdbb2"
+background = "#18201e"
+foreground = "#8ea4a0"
 
 [colors.normal]
 black = "#282828"
@@ -73,16 +73,16 @@ white = "#ebdbb2"
 
 # Selection configuration
 [selection]
-# semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
-# save_to_clipboard = false
+semantic_escape_chars = ",│`|:\"' ()[]{}<>\t"
+save_to_clipboard = false
 
 # Cursor configuration
 [cursor]
-# style = { shape = "Block", blinking = "Off" }
+style = { shape = "Block", blinking = "Off" }
 # vi_mode_style = "None"
-# blink_interval = 750
-# unfocused_hollow = true
-# thickness = 0.15
+blink_interval = 500
+unfocused_hollow = false
+thickness = 0.15
 
 # Live config reload
 # live_config_reload = true
@@ -95,7 +95,7 @@ white = "#ebdbb2"
 
 # Mouse configuration
 [mouse]
-# hide_when_typing = false
+hide_when_typing = true
 
 # Hints configuration
 [hints]
@@ -111,23 +111,23 @@ white = "#ebdbb2"
 
 # Key bindings
 [keyboard]
-# bindings = [
-#   { key = "V", mods = "Control|Shift", action = "Paste" },
-#   { key = "C", mods = "Control|Shift", action = "Copy" },
-#   { key = "Insert", mods = "Shift", action = "PasteSelection" },
-#   { key = "Key0", mods = "Control", action = "ResetFontSize" },
-#   { key = "Equals", mods = "Control", action = "IncreaseFontSize" },
-#   { key = "Minus", mods = "Control", action = "DecreaseFontSize" },
-#   { key = "F11", action = "ToggleFullscreen" },
-#   { key = "Paste", action = "Paste" },
-#   { key = "Copy", action = "Copy" },
-#   { key = "L", mods = "Control", action = "ClearLogNotice" },
+bindings = [
+  { key = "V", mods = "Control|Shift", action = "Paste" },
+  { key = "C", mods = "Control|Shift", action = "Copy" },
+  { key = "Insert", mods = "Shift", action = "PasteSelection" },
+  { key = "Key0", mods = "Control", action = "ResetFontSize" },
+  { key = "Equals", mods = "Control", action = "IncreaseFontSize" },
+  { key = "Minus", mods = "Control", action = "DecreaseFontSize" },
+  { key = "F11", action = "ToggleFullscreen" },
+  { key = "Paste", action = "Paste" },
+  { key = "Copy", action = "Copy" },
+  { key = "L", mods = "Control", action = "ClearLogNotice" },
 #   { key = "L", mods = "Control", chars = "\x0c" },
-#   { key = "PageUp", mods = "Shift", action = "ScrollPageUp", mode = "~Alt" },
-#   { key = "PageDown", mods = "Shift", action = "ScrollPageDown", mode = "~Alt" },
-#   { key = "Home", mods = "Shift", action = "ScrollToTop", mode = "~Alt" },
-#   { key = "End", mods = "Shift", action = "ScrollToBottom", mode = "~Alt" }
-# ]
+  { key = "PageUp", mods = "Shift", action = "ScrollPageUp", mode = "~Alt" },
+  { key = "PageDown", mods = "Shift", action = "ScrollPageDown", mode = "~Alt" },
+  { key = "Home", mods = "Shift", action = "ScrollToTop", mode = "~Alt" },
+  { key = "End", mods = "Shift", action = "ScrollToBottom", mode = "~Alt" }
+]
 
 # Debug options
 [debug]

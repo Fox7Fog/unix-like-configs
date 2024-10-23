@@ -187,65 +187,92 @@ default_border pixel 2
 default_floating_border pixel 2
 for_window [class="^.*"] border pixel 2
 
-# Color definitions
-set $white #ffffff
-set $dark_gray #333333
-set $medium_gray #888888
-set $slate_gray #2f343a
-set $dark_red #900000
-set $black #000000
-set $near_black #222222
-set $separator_gray #666666
-set $tiffany_green #00A19B
-set $silver #C8CCCE
-set $teal_dark #006D5B
-set $teal_medium #009B81
-set $teal_light #00C9A8
-set $teal_bright #00F7CE
-set $teal_green #167D7F
-set $teal #29A0B1
-set $mint #DDFFE7
-set $spear_mint #98D7C2
+# Define color variables
+set $focused_border_color       #167D7F
+set $focused_background_color   #167D7F
+set $focused_text_color         #ffffff
+set $focused_indicator_color    #ffffff
 
-# Color meanings:
-# $teal_dark - Dark teal green (main color)
-# $white - Pure white
-# $dark_gray - Very dark gray
-# $medium_gray - Medium gray
-# $slate_gray - Dark slate gray
-# $dark_red - Dark red
-# $black - Pure black
-# $near_black - Nearly black
-# $separator_gray - Darker medium gray
+set $inactive_border_color      #222222
+set $inactive_background_color  #333333
+set $inactive_text_color        #ffffff
+set $inactive_indicator_color   #ffffff
 
-# Border color definitions
-#focused_border     # Dark teal green for focused windows
-#unfocused_border   # Dark gray for unfocused windows
-#urgent_border      # Dark red for urgent windows
+set $unfocused_border_color     #333333
+set $unfocused_background_color #333333
+set $unfocused_text_color       #222222
+set $unfocused_indicator_color  #ffffff
 
-# Window color settings
-#| Class                  | Border         | Background  | Text          | Indicator
-client.focused            $teal_medium     $teal_medium  $teal_medium    $teal_medium
-client.focused_inactive   $near_black      $near_black   $teal_medium    $teal_medium
-client.unfocused          $near_black      $near_black   $teal_medium    $teal_medium
-client.urgent             $dark_red        $dark_red     $teal_medium    $dark_red
+set $urgent_border_color        #900000
+set $urgent_background_color    #900000
+set $urgent_text_color          #ffffff
+set $urgent_indicator_color     #ffffff
 
-# i3bar configuration
+# Apply colors using the defined variables
+client.focused             $focused_border_color      $focused_background_color       $focused_text_color      $focused_border_color
+client.focused_inactive    $inactive_border_color     $inactive_background_color      $inactive_text_color     $inactive_border_color
+client.unfocused           $unfocused_border_color    $unfocused_background_color     $unfocused_text_color    $unfocused_indicator_color
+client.urgent              $urgent_border_color       $urgent_background_color        $urgent_text_color       $urgent_indicator_color
+
+# Define color variables
+set $bar_bg_color               #000000
+set $bar_statusline_color       #FFFFFF
+set $bar_separator_color        #666666
+
+set $bar_focus_bg_color         #167D7F
+set $bar_focus_text_color       #FFFFFF
+set $bar_focus_secondary_bg     #08313A
+
+set $bar_active_bg_color        #666666
+set $bar_active_text_color      #FFFFFF
+set $bar_inactive_text_color    #888888
+set $bar_inactive_bg_color      #222222
+set $bar_inactive_border_color  #666666
+
+set $bar_urgent_bg_color        #900000
+set $bar_urgent_text_color      #FFFFFF
+set $bar_secondary_color        #08313A
+
+# i3bar configuration for DP-0
 bar {
-    #output           DP-1
-    status_command    i3status
+    output            DP-0
+    font pango:       JetBrainsMono 9
+    status_command    i3status-rs ~/.config/i3status-rust/config.toml
     position          bottom
-    mode              hide # Pops up while holding the modkey
+    #mode              hide # Pops up while holding the modkey
+    workspace_buttons yes
+    tray_output       none
+    colors {
+       background            $bar_bg_color
+       statusline            $bar_statusline_color
+       separator             $bar_separator_color
+
+       focused_workspace     $bar_focus_bg_color           $bar_focus_secondary_bg    $bar_focus_text_color
+       active_workspace      $bar_active_bg_color          $bar_active_bg_color       $bar_active_text_color
+       inactive_workspace    $bar_inactive_border_color    $bar_inactive_bg_color     $bar_inactive_text_color
+       urgent_workspace      $bar_secondary_color          $bar_urgent_bg_color       $bar_urgent_text_color
+       binding_mode          $bar_secondary_color          $bar_urgent_bg_color       $bar_urgent_text_color
+   }
+}
+
+# i3bar configuration for eDP-1-1
+bar {
+    output            eDP-1-1
+    font pango:       JetBrainsMono 10
+    status_command    i3status-rs ~/.config/i3status-rust/config.toml
+    position          bottom
+    #mode              hide # Pops up while holding the modkey
     workspace_buttons yes
     #tray_output       none
     colors {
-        background $black
-        statusline $white
-        separator  $white
-        # class                 border          background      text         
-        focused_workspace       $teal_light     $teal_dark      $white
-        active_workspace        $white          $dark_gray      $white
-        inactive_workspace      $medium_gray    $near_black     $medium_gray
-        urgent_workspace        $white          $dark_red       $white
+        background            $bar_bg_color
+        statusline            $bar_statusline_color
+        separator             $bar_separator_color
+
+        focused_workspace     $bar_focus_bg_color           $bar_focus_secondary_bg    $bar_focus_text_color
+        active_workspace      $bar_active_bg_color          $bar_active_bg_color       $bar_active_text_color
+        inactive_workspace    $bar_inactive_border_color    $bar_inactive_bg_color     $bar_inactive_text_color
+        urgent_workspace      $bar_secondary_color          $bar_urgent_bg_color       $bar_urgent_text_color
+        binding_mode          $bar_secondary_color          $bar_urgent_bg_color       $bar_urgent_text_color
     }
 }

@@ -1,3 +1,5 @@
+/* See LICENSE file for copyright and license details. */
+
 /* interval between updates (in ms) */
 const unsigned int interval = 1000;
 

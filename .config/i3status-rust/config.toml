@@ -1,0 +1,87 @@
+icons_format = "{icon}"
+
+[theme]
+theme = "dracula"
+[theme.overrides]
+idle_bg = "#000000"
+idle_fg = "#FFFFFF"
+# Example: swap `good` and `warning` colors
+good_fg = { link = "warning_fg" }
+good_bg = { link = "warning_bg" }
+warning_fg = { link = "good_fg" }
+warning_bg = { link = "good_bg" }
+
+[icons]
+icons = "material-nf"
+
+[[block]]
+block = "bluetooth"
+mac = "00:18:09:92:1B:BA"
+disconnected_format = ""
+format = "$icon"
+[block.battery_state]
+"0..20" = "critical"
+"21..70" = "warning"
+"71..100" = "good"
+[block.theme_overrides]
+idle_bg = "#00221C"
+idle_fg = "#FFFFFF"
+
+[[block]]
+block = "sound"
+[[block.click]]
+button = "left"
+cmd = " pavucontrol "
+[block.theme_overrides]
+idle_bg = "#87ACA3"
+idle_fg = "#000000"
+
+[[block]]
+block = "cpu"
+info_cpu = 20
+warning_cpu = 50
+critical_cpu = 90
+[block.theme_overrides]
+idle_bg = "#5CD85A"
+idle_fg = "#000000"
+
+[[block]]
+block = "disk_space"
+path = "/"
+info_type = "available"
+alert_unit = "GB"
+interval = 20
+warning = 20.0
+alert = 10.0
+format = " $icon $available.eng(w:2) "
+[block.theme_overrides]
+idle_bg = "#DDFFE7"
+idle_fg = "#000000"
+
+[[block]]
+block = "memory"
+format = " $icon $mem_total_used_percents.eng(w:2) "
+format_alt = " $icon_swap $swap_used_percents.eng(w:2) "
+[block.theme_overrides]
+idle_bg = "#98D7C2"
+idle_fg = "#000000"
+
+[[block]]
+block = "backlight"
+device = "intel_backlight"
+missing_format = ""
+[block.theme_overrides]
+idle_bg = "#167D7F"
+idle_fg = "#000000"
+
+[[block]]
+block = "time"
+interval = 1
+format = " $timestamp.datetime(f:'%A | %Y-%m-%d | %H:%M:%S ') "
+[block.theme_overrides]
+idle_bg = "#08313A"
+idle_fg = "#EEEEEE"
+
+#[[block]]
+#block = "time"
+#format = " $timestamp.datetime(f:'')"

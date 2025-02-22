@@ -42,7 +42,7 @@ glyph_offset = { x = 0, y = 0 }
 
 # Color configuration (Gruvbox Dark)
 [colors.primary]
-background = "#18201e"
+background = "#000000"
 foreground = "#8ea4a0"
 
 [colors.normal]
